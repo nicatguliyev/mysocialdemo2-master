@@ -42,7 +42,6 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
                             new UsernamePasswordAuthenticationToken(username, null, new ArrayList<>());
                     SecurityContextHolder.getContext().setAuthentication(authenticationToken);
                     filterChain.doFilter(request, response);
-                   // .withIssuer("http://localhost:8080/login")
                 }
                 catch (Exception e){
                         log.error("{} Xetasi bas verdi", e.getMessage());
