@@ -33,12 +33,12 @@ public class Mysocialdemo2Application {
 //		  userService.saveRole(new Role(null, "ROLE_ADMIN"));
 //		  userService.saveRole(new Role(null, "ROLE_SUPER_ADMIN"));
 //
-		  userService.saveUser(new User(null, "Nicat", "Guliyev", "nicatguliyev3@gmail.com",
-				   "12345", new ArrayList<>()));
-			userService.saveUser(new User(null, "Natiq", "Guliyev", "natiqguliyev@gmail.com",
-					 "12345", new ArrayList<>()));
-			userService.saveUser(new User(null, "Cingiz", "Sheydayev", "cingizsheydayev@gmail.com",
-					 "12345", new ArrayList<>()));
+//		  userService.saveUser(new User(null, "Nicat", "Guliyev", "nicatguliyev3@gmail.com",
+//				   "12345", new ArrayList<>()));
+//			userService.saveUser(new User(null, "Natiq", "Guliyev", "natiqguliyev@gmail.com",
+//					 "12345", new ArrayList<>()));
+//			userService.saveUser(new User(null, "Cingiz", "Sheydayev", "cingizsheydayev@gmail.com",
+//					 "12345", new ArrayList<>()));
 
 //
 //		  userService.addRoleToUser("nicat123", "ROLE_ADMIN");

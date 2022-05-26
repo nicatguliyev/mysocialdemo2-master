@@ -1,8 +1,10 @@
 package com.nicatguliyev.mysocialdemo2.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -22,7 +24,8 @@ public class User {
     private String name;
     private String surname;
     private String email;
-    //private Date birthDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private Date birthDate;
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
     private Collection<Post> posts = new ArrayList<>();
