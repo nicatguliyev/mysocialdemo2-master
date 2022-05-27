@@ -1,13 +1,10 @@
 package com.nicatguliyev.mysocialdemo2.controller;
 
-import com.nicatguliyev.mysocialdemo2.model.Role;
 import com.nicatguliyev.mysocialdemo2.model.User;
 import com.nicatguliyev.mysocialdemo2.service.UserService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,25 +26,9 @@ public class UserController {
         return "Nicat Guliyev";
     }
 
-    @PostMapping("/user/save")
+    @PostMapping("/registration")
     public ResponseEntity<User> saveUser(@RequestBody User user){
         return  ResponseEntity.ok().body(userService.saveUser(user));
     }
 
-    @PostMapping("/role/save")
-    public ResponseEntity<Role> saveRole(@RequestBody Role role){
-        return  ResponseEntity.ok().body(userService.saveRole(role));
-    }
-
-    @PostMapping("/role/addtouser")
-    public ResponseEntity<?> addRoleToUser(@RequestBody RoleToUserForm form){
-        userService.addRoleToUser(form.getUsername(), form.getRoleName());
-        return  ResponseEntity.ok().build();
-    }
-}
-
-@Data
-class RoleToUserForm{
-    private String username;
-    private String roleName;
 }

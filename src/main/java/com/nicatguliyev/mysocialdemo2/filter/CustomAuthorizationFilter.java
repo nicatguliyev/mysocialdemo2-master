@@ -25,7 +25,7 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
 
-        if(request.getServletPath().equals("/login")){
+        if(request.getServletPath().equals("/login") || request.getServletPath().equals("/api/registration")){
             filterChain.doFilter(request, response);
         }
         else{
@@ -42,7 +42,6 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
                             new UsernamePasswordAuthenticationToken(username, null, new ArrayList<>());
                     SecurityContextHolder.getContext().setAuthentication(authenticationToken);
                     filterChain.doFilter(request, response);
-                   // .withIssuer("http://localhost:8080/login")
                 }
                 catch (Exception e){
                         log.error("{} Xetasi bas verdi", e.getMessage());
